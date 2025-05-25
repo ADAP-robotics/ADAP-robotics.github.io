@@ -1,1 +1,1 @@
-# ADAP-robotics.github.io
+# Adaptive Diffusion Action Planning
