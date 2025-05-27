@@ -6,7 +6,7 @@
   <meta name="description"
     content="Adaptive Diffusion Action Planning (ADAP): Mastering Agile Tasks with Limited Trials">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adaptive Diffusion Action Planning (ADAP): Mastering Agile Tasks with Limited Trials</title>
+  <title>ADAP</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -136,16 +136,70 @@
     </div>
   </section>
 
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
+        <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
+          <source src="./static/materials/ADAP_page.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    </div>
+  </section>
+
     <section class="section">
-        <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column is-10">
-            <h2 class="subtitle is-4">Abstract</h2>
-            <p>To be filled soon.</p>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <!-- <div style="display: flex; justify-content: center;">
+            <div style="display: flex; justify-content: center;">
+              <img src="./static/images/teaser.png" alt="Abstract image" style="max-width: 100%; height: auto; margin: 10px;">
             </div>
+          </div> -->
+          <p style="text-align: justify;">
+            Embodied robots nowadays can already handle many real-world manipulation tasks. 
+            However, certain other real-world tasks (e.g., shooting a basketball into a hoop) are highly agile and require high execution precision, presenting additional challenges for methods primarily designed for quasi-static manipulation tasks. 
+            This leads to increased efforts in costly data collection, laborious reward design, or complex motion planning. 
+            Such tasks, however, are far less challenging for humans. Say a novice basketball player typically needs only ~10 attempts to make their first successful shot, by roughly imitating a motion prior and then iteratively adjusting their motion based on the past outcomes. 
+            Inspired by this human learning paradigm, we propose the <b> Diffusion Action Planning (ADAP) </b> algorithm, a simple &  scalable approach which iteratively refines its action plan by few real-world trials within a learned prior motion pattern, until reaching a specific goal. 
+            Experiments demonstrated that ADAP can learn and accomplish a wide range of goal-conditioned agile dynamic tasks with human-level precision and efficiency directly in real-world, such as throwing a basketball into the hoop in fewer than 10 trials.
+          </p>
         </div>
-        </div>
-    </section>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </section>
+
+
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">ADAP Framework</h2>
+          <div class="has-text-centered">
+            <img src="./static/materials/adap3.png" alt="SKIL Framework" class="image is-fullwidth">
+          </div>
+          <p class="content has-text-justified mt-4">
+            Overview of our method ADAP, including two stages: <b>Motion Pattern Learning</b> and <b>Iterative Rollout & Adaption</b>. 
+            
+          </p>
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-6">
+                <p class="content has-text-justified mt-4">
+                  Process of generating reference features, given a single reference image of the specific task: (1) Apply SAM and Vision Foundation Model to obtain the mask and the feature map individually; (2) Cluster the masked features to obtain the reference features using K-means.
+                </p>
+              </div>
+              <div class="column is-6">
+                <div class="has-text-centered">
+                  <img src="./static/images/reference_kp.png" alt="One-time Reference Features Generation" class="image is-fullwidth">
+                </div>
+              </div>
+            </div>
+          </div> -->
+
     
     <section class="section">
         <div class="container is-max-desktop">
@@ -158,4 +212,5 @@
         </div>
     </section>
 
+</body>
 </html>
