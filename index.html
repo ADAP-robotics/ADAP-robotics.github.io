@@ -31,6 +31,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css?v=1.0">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -94,7 +96,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/submit/6487157/view" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/pdf/2505.21916" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -102,13 +104,14 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2505.21916" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
                 </span>
+                
                 <!-- Code Link. -->
                 <span class="link-block">
                   <a href="https://github.com/yihang99" class="external-link button is-normal is-rounded is-dark">
@@ -149,7 +152,7 @@
 
 <section class="section" style="padding-bottom: 0">
   <div class="container">
-    <div id="method_video" class="columns is-centered has-text-centered">
+    <div id="video" class="columns is-centered has-text-centered">
       <div class="column is-two-thirds no-bottom-padding">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
           <iframe src="https://www.youtube.com/embed/ZXQpSNnokpw" title="YouTube video player" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #bbb; border-radius: 10px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-gtm-yt-inspected-8="true"></iframe>
@@ -186,8 +189,30 @@
     <!--/ Abstract. -->
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">Tasks</h2>
+          <div class="has-text-centered">
+            <img src="./static/materials/tasks.png" alt="SKIL Framework" class="image is-fullwidth">
+          </div>
+          <p class="content has-text-justified mt-4">
+            We select three real-world goal-conditioned agile dynamic tasks: <b>Basketball Shot</b>, <b>Curling</b> and <b>Fishing Rod Swinging</b>,
+            aiming to cover several typical agile dynamic behaviors that are commonly seen in daily life, including projectile motion, sliding with friction, and movement of soft deformable objects.
+            <!-- Basketball Shot: The robot arm is expected to throw a toy basketball into a hoop located arbitrarily on the table, with a spoon-shaped end effector which allows the toy ball to detach naturally from the end effector through smooth acceleration changes. This is consistent with how human make these shots.
 
-  <!-- <section class="section">
+            Curling: The robotic arm uses a bar-shaped end effector to push the curling stone from a fixed starting point to a certain speed, and then let it slide while decelerating naturally on the table surface. The goal is to let it stop at a precise position just in front of a target stone. 
+
+            Fishing Rod Swinging: The robotic arm equipped with a rod-like end effector attempts to cast the `hook' swiftly onto the target location on the table by swinging the rod. The `hook' is connected to the rod with a soft rope, which challenges the control of its position. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
@@ -197,34 +222,57 @@
           </div>
           <p class="content has-text-justified mt-4">
             Overview of our method ADAP, including two stages: <b>Motion Pattern Learning</b> and <b>Iterative Rollout & Adaption</b>. 
-            
+            In the first stage, the agent learns the motion pattern and the rough correlation between the action and the outcome from the few provided action demonstration priors;
+            in the second stage, the agent iteratively refines its action plan based on real-world trials, until reaching a newly specified goal.
           </p>
-          <div class="container">
-            <div class="columns is-centered">
-              <div class="column is-6">
-                <p class="content has-text-justified mt-4">
-                  Process of generating reference features, given a single reference image of the specific task: (1) Apply SAM and Vision Foundation Model to obtain the mask and the feature map individually; (2) Cluster the masked features to obtain the reference features using K-means.
-                </p>
-              </div>
-              <div class="column is-6">
-                <div class="has-text-centered">
-                  <img src="./static/images/reference_kp.png" alt="One-time Reference Features Generation" class="image is-fullwidth">
-                </div>
-              </div>
-            </div>
-          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">Real-world Results</h2>
+          <div class="has-text-centered">
+            <img src="./static/materials/result.png" alt="SKIL Framework" class="image is-fullwidth">
+          </div>
+          <p class="content has-text-justified mt-4">
+            We evaluate ADAP on three agile dynamic tasks, including <b>Basketball Shot</b> (along with its 2 modified versions with changed hareware), <b>Curling</b>, and <b>Fishing Rod Swinging</b>. 
+            For all these tasks, ADAP can reach a new unseen goal in less than 10 real-world trials in total, thus achieving human-level performance and efficiency. Please see <b><a href="#video">OUR VIDEO</a></b> for experiment visualizations. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
     
-    <section class="section">
-        <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column is-10">
-            <h2 class="subtitle is-4">Citation</h2>
-            <p>To be filled soon.</p>
-            </div>
+    <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">Citation</h2>
+        Welcome to cite us if you find our work inspiring or helpful : )  Thank you!
+        <div style="position: relative;">
+            <pre>
+              <code id="bibtex-code">
+@misc{hu2025ADAP,
+      title={Mastering Agile Tasks with Limited Trials}, 
+      author={Yihang Hu and Pingyue Sheng and Shengjie Wang and Yang Gao},
+      year={2025},
+      eprint={2505.21916},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2505.21916}, 
+}
+              </code></pre>
+            <button onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: none; border: none; cursor: pointer;">
+                <!-- 粘贴图标，可以使用Font Awesome 图标库 -->
+                <i class="fa fa-paste" aria-hidden="true"></i>
+            </button>
         </div>
-        </div>
-    </section>
+
+    </div>
+</section>
 
 </body>
 </html>
