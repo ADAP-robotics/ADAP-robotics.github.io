@@ -67,7 +67,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">Adaptive Diffusion Action Planning (ADAP): <br>Mastering Agile Tasks with Limited Trials</h1>
+            <h1 class="title is-2 publication-title">Prior Reinforce: <br>Mastering Agile Tasks with Limited Trials</h1>
             <div class="container">
               <div class="columns is-centered">
                 <div class="column is-10">
@@ -77,6 +77,9 @@
                     </span>
                     <span class="author-block">
                       <a href="https://spyzss.github.io/reven.github.io/">Pingyue Sheng</a><sup>1</sup>,
+                    </span>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=0ROQMVcAAAAJ&hl=en/">Yuyang Liu</a><sup>1</sup>,
                     </span>
                     <span class="author-block">
                       <a href="https://shengjiewang-jason.github.io/">Shengjie Wang</a><sup>1,2,3</sup>,
@@ -155,7 +158,7 @@
     <div id="video" class="columns is-centered has-text-centered">
       <div class="column is-two-thirds no-bottom-padding">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe src="https://www.youtube.com/embed/ZXQpSNnokpw" title="YouTube video player" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #bbb; border-radius: 10px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-gtm-yt-inspected-8="true"></iframe>
+          <iframe src="https://www.youtube.com/embed/6C_vVrGoQEw" title="YouTube video player" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #bbb; border-radius: 10px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-gtm-yt-inspected-8="true"></iframe>
         </div>
       </div>
     </div>
@@ -163,7 +166,6 @@
 </section>
 
 
-<!-- https://youtu.be/ZXQpSNnokpw -->
 
     <section class="section">
     <div class="container is-max-desktop">
@@ -180,8 +182,8 @@
             However, certain other real-world tasks (e.g., shooting a basketball into a hoop) are highly agile and require high execution precision, presenting additional challenges for methods primarily designed for quasi-static manipulation tasks. 
             This leads to increased efforts in costly data collection, laborious reward design, or complex motion planning. 
             Such tasks, however, are far less challenging for humans. Say a novice basketball player typically needs only ~10 attempts to make their first successful shot, by roughly imitating a motion prior and then iteratively adjusting their motion based on the past outcomes. 
-            Inspired by this human learning paradigm, we propose the <b> Diffusion Action Planning (ADAP) </b> algorithm, a simple &  scalable approach which iteratively refines its action plan by few real-world trials within a learned prior motion pattern, until reaching a specific goal. 
-            Experiments demonstrated that ADAP can learn and accomplish a wide range of goal-conditioned agile dynamic tasks with human-level precision and efficiency directly in real-world, such as throwing a basketball into the hoop in fewer than 10 trials.
+            Inspired by this human learning paradigm, we propose the <b> Prior Reinforce (P.R.) </b> algorithm, a simple & scalable approach which iteratively refines its action plan by few real-world trials within a learned prior motion pattern, until reaching a specific goal. 
+            Experiments demonstrated that Prior Reinforce can learn and accomplish a wide range of goal-conditioned agile dynamic tasks with human-level precision and efficiency directly in real-world, such as throwing a basketball into the hoop in fewer than 10 trials.
           </p>
         </div>
       </div>
@@ -216,12 +218,12 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">ADAP Framework</h2>
+          <h2 class="title is-3 has-text-centered">Prior Reinforce Framework</h2>
           <div class="has-text-centered">
-            <img src="./static/materials/adap3.png" alt="SKIL Framework" class="image is-fullwidth">
+            <img src="./static/materials/PR.png" alt="SKIL Framework" class="image is-fullwidth">
           </div>
           <p class="content has-text-justified mt-4">
-            Overview of our method ADAP, including two stages: <b>Motion Pattern Learning</b> and <b>Iterative Rollout & Adaption</b>. 
+            Overview of our method <b>Prior Reinforce</b>, including two stages: <b>Motion Pattern Learning</b> and <b>Iterative Rollout & Adaption</b>. 
             In the first stage, the agent learns the motion pattern and the rough correlation between the action and the outcome from the few provided action demonstration priors;
             in the second stage, the agent iteratively refines its action plan based on real-world trials, until reaching a newly specified goal.
           </p>
@@ -252,24 +254,25 @@
     <div class="container is-max-desktop content">
         <h2 class="title">Citation</h2>
         Welcome to cite us if you find our work inspiring or helpful : )  Thank you!
-        <div style="position: relative;">
+        <!-- <div style="position: relative;">
             <pre>
               <code id="bibtex-code">
-@misc{hu2025ADAP,
-      title={Mastering Agile Tasks with Limited Trials}, 
-      author={Yihang Hu and Pingyue Sheng and Shengjie Wang and Yang Gao},
-      year={2025},
-      eprint={2505.21916},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2505.21916}, 
-}
-              </code></pre>
+                @misc{hu2025ADAP,
+                      title={Mastering Agile Tasks with Limited Trials}, 
+                      author={Yihang Hu and Pingyue Sheng and Shengjie Wang and Yang Gao},
+                      year={2025},
+                      eprint={2505.21916},
+                      archivePrefix={arXiv},
+                      primaryClass={cs.RO},
+                      url={https://arxiv.org/abs/2505.21916}, 
+                }
+              </code>
+            </pre>
             <button onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: none; border: none; cursor: pointer;">
-                <!-- 粘贴图标，可以使用Font Awesome 图标库 -->
+
                 <i class="fa fa-paste" aria-hidden="true"></i>
             </button>
-        </div>
+        </div> -->
 
     </div>
 </section>
