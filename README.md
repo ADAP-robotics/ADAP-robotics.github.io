@@ -1,1 +1,1 @@
-# Adaptive Diffusion Action Planning
+# Prior Reinforce
