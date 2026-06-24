@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="Adaptive Diffusion Action Planning (ADAP): Mastering Agile Tasks with Limited Trials">
+    content="PR">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ADAP</title>
 
@@ -67,22 +67,25 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">Prior Reinforce: <br>Mastering Agile Tasks with Limited Trials</h1>
+            <h1 class="title is-2 publication-title">Prior Reinforce: Goal-Conditioned Dynamic Manipulation with Limited Trials</h1>
+            <div class="has-text-centered mb-4">
+              <img src="./static/materials/iros26_logo_w.webp" alt="IROS 2026 logo" style="max-height: 70px; width: auto; opacity: 0.95;">
+            </div>
             <div class="container">
               <div class="columns is-centered">
                 <div class="column is-10">
                   <div class="is-size-5 publication-authors has-text-centered">
                     <span class="author-block">
-                      <a href="https://scholar.google.com/citations?user=slFtxbMAAAAJ&hl=en">Yihang Hu</a><sup>1</sup>,  
+                      <a href="https://scholar.google.com/citations?user=slFtxbMAAAAJ&hl=en">Yihang Hu</a><sup>1,2</sup>,  
                     </span>
                     <span class="author-block">
                       <a href="https://spyzss.github.io/reven.github.io/">Pingyue Sheng</a><sup>1</sup>,
                     </span>
                     <span class="author-block">
-                      <a href="https://scholar.google.com/citations?user=0ROQMVcAAAAJ&hl=en/">Yuyang Liu</a><sup>1</sup>,
+                      <a href="https://scholar.google.com/citations?user=0ROQMVcAAAAJ&hl=en/">Yuyang Liu</a><sup>1,2</sup>,
                     </span>
                     <span class="author-block">
-                      <a href="https://shengjiewang-jason.github.io/">Shengjie Wang</a><sup>1,2,3</sup>,
+                      <a href="https://shengjiewang-jason.github.io/">Shengjie Wang</a><sup>1,2</sup>,
                     </span>
                     <span class="author-block">
                       <a href="https://yang-gao.weebly.com/">Yang Gao</a><sup>1,2,3</sup>
@@ -92,7 +95,7 @@
               </div>
             </div>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Tsinghua University, <sup>2</sup>Shanghai AI Laboratory, <sup>3</sup>Shanghai Qi Zhi Institute</span><br>
+              <span class="author-block"><sup>1</sup>Tsinghua University, <sup>2</sup>Shanghai Qi Zhi Institute, <sup>3</sup>Spirit AI</span><br>
             </div>
 
             <div class="column has-text-centered">
@@ -178,13 +181,7 @@
             </div>
           </div> -->
           <p style="text-align: justify;">
-            Embodied robots nowadays can already handle many real-world manipulation tasks. 
-            However, certain other real-world tasks (e.g., shooting a basketball into a hoop) are highly agile and require high execution precision, presenting additional challenges for methods primarily designed for quasi-static manipulation tasks. 
-            This leads to increased efforts in costly data collection, laborious reward design, or complex motion planning. 
-            Such tasks, however, are far less challenging for humans. Say a novice basketball player typically needs only ~10 attempts to make their first successful shot, by roughly imitating a motion prior and then iteratively adjusting their motion based on the past outcomes. 
-            Inspired by this human learning paradigm, we propose the <b> Prior Reinforce (P.R.) </b> algorithm, a simple & scalable approach which iteratively refines its action plan by few real-world trials within a learned prior motion pattern, until reaching a specific goal. 
-            Experiments demonstrated that Prior Reinforce can learn and accomplish a wide range of goal-conditioned agile dynamic tasks with human-level precision and efficiency directly in real-world, such as throwing a basketball into the hoop in fewer than 10 trials.
-          </p>
+            Embodied robots have achieved strong performance in many real-world manipulation tasks, yet agile dynamic manipulation remains challenging due to high sensitivity to motion parameters and sparse outcome-level feedback. Tasks such as shooting a basketball into a hoop require precise control of fast open-loop motions, where small trajectory variations can lead to large outcome deviations, making data-efficient adaptation difficult for existing methods that rely on large-scale interaction, reward engineering, or accurate dynamic modeling. We propose Prior Reinforce (P.R.), a simple and practical framework for goal-conditioned dynamic manipulation. The method first learns a structured motion manifold from a small set of demonstrations using a conditional diffusion model, and then adapts motions toward new goals through feedback-driven optimization in a low-dimensional condition space. By separating motion generation from outcome-driven adaptation, the framework enables efficient refinement using only a small number of real-world trials under noisy perception. Experiments on multiple real-world dynamic manipulation tasks demonstrate that P.R. reliably achieves new goals within as few as ten total trials while remaining robust to perception noise and hardware uncertainty, suggesting a practical approach for low-trial real-world robot adaptation.
         </div>
       </div>
     </div>
@@ -257,10 +254,10 @@
         <div style="position: relative;">
             <pre>
               <code id="bibtex-code">
-                @misc{hu2025priorreinforcemasteringagile,
-                      title={Prior Reinforce: Mastering Agile Tasks with Limited Trials}, 
+                @misc{hu2026priorreinforcegoalconditioneddynamic,
+                      title={Prior Reinforce: Goal-Conditioned Dynamic Manipulation with Limited Trials}, 
                       author={Yihang Hu and Pingyue Sheng and Yuyang Liu and Shengjie Wang and Yang Gao},
-                      year={2025},
+                      year={2026},
                       eprint={2505.21916},
                       archivePrefix={arXiv},
                       primaryClass={cs.RO},
