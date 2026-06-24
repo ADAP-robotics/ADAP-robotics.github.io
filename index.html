@@ -181,7 +181,7 @@
             </div>
           </div> -->
           <p style="text-align: justify;">
-            Embodied robots have achieved strong performance in many real-world manipulation tasks, yet agile dynamic manipulation remains challenging due to high sensitivity to motion parameters and sparse outcome-level feedback. Tasks such as shooting a basketball into a hoop require precise control of fast open-loop motions, where small trajectory variations can lead to large outcome deviations, making data-efficient adaptation difficult for existing methods that rely on large-scale interaction, reward engineering, or accurate dynamic modeling. We propose Prior Reinforce (P.R.), a simple and practical framework for goal-conditioned dynamic manipulation. The method first learns a structured motion manifold from a small set of demonstrations using a conditional diffusion model, and then adapts motions toward new goals through feedback-driven optimization in a low-dimensional condition space. By separating motion generation from outcome-driven adaptation, the framework enables efficient refinement using only a small number of real-world trials under noisy perception. Experiments on multiple real-world dynamic manipulation tasks demonstrate that P.R. reliably achieves new goals within as few as ten total trials while remaining robust to perception noise and hardware uncertainty, suggesting a practical approach for low-trial real-world robot adaptation.
+            Embodied robots have achieved strong performance in many real-world manipulation tasks, yet agile dynamic manipulation remains challenging due to high sensitivity to motion parameters and sparse outcome-level feedback. Tasks such as shooting a basketball into a hoop require precise control of fast open-loop motions, where small trajectory variations can lead to large outcome deviations, making data-efficient adaptation difficult for existing methods that rely on large-scale interaction, reward engineering, or accurate dynamic modeling. We propose <b>Prior Reinforce (P.R.)</b>, a simple and practical framework for goal-conditioned dynamic manipulation. The method first learns a structured motion manifold from a small set of demonstrations using a conditional diffusion model, and then adapts motions toward new goals through feedback-driven optimization in a low-dimensional condition space. By separating motion generation from outcome-driven adaptation, the framework enables efficient refinement using only a small number of real-world trials under noisy perception. Experiments on multiple real-world dynamic manipulation tasks demonstrate that P.R. reliably achieves new goals within as few as ten total trials while remaining robust to perception noise and hardware uncertainty, suggesting a practical approach for low-trial real-world robot adaptation.
         </div>
       </div>
     </div>
@@ -220,7 +220,7 @@
             <img src="./static/materials/PR.png" alt="SKIL Framework" class="image is-fullwidth">
           </div>
           <p class="content has-text-justified mt-4">
-            Overview of our method <b>Prior Reinforce</b>, including two stages: <b>Motion Pattern Learning</b> and <b>Iterative Rollout & Adaption</b>. 
+            Overview of our method <b>Prior Reinforce</b>, including two stages: <b>Motion Pattern Learning</b> and <b>Iterative Rollout & Adaptation</b>. 
             In the first stage, the agent learns the motion pattern and the rough correlation between the action and the outcome from the few provided action demonstration priors;
             in the second stage, the agent iteratively refines its action plan based on real-world trials, until reaching a newly specified goal.
           </p>
@@ -238,8 +238,9 @@
             <img src="./static/materials/result.png" alt="SKIL Framework" class="image is-fullwidth">
           </div>
           <p class="content has-text-justified mt-4">
-            We evaluate ADAP on three agile dynamic tasks, including <b>Basketball Shot</b> (along with its 2 modified versions with changed hareware), <b>Curling</b>, and <b>Fishing Rod Swinging</b>. 
-            For all these tasks, ADAP can reach a new unseen goal in less than 10 real-world trials in total, thus achieving human-level performance and efficiency. Please see <b><a href="#video">OUR VIDEO</a></b> for experiment visualizations. 
+            We evaluate <b>Prior Reinforce</b> on three agile dynamic tasks, including <b>Basketball Shot</b> (along with its 2 modified versions with changed hardware), <b>Curling</b>, and <b>Fishing Rod Swinging</b>, with perception signal provided by human eye or VLM model. 
+
+            Result shows that under all cases we tested, <b>P.R.</b> can reach a new unseen goal in as few as 10 real-world trials in total, thus achieving human-level performance and efficiency. Please see <b><a href="#video">OUR VIDEO</a></b> for experiment visualizations. 
           </p>
         </div>
       </div>
